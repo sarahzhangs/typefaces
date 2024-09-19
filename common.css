@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap');
+
+:root {
+    --web-margin: 2em;
+    --heading: 0.9em;
+    --heading-line-height: 0.9em;
+    --body-copy: 0.9em;
+    --body-copy-line-height: 0.9em;
+    --caption: 0.8em;
+    --surface-primary: #F4F4F0;
+    --surface-secondary: #F4F4F0;
+    --text-primary: #EA3323; 
+    --text-secondary: #000000; 
+    --stroke-primary: #EA3323;
+}
+
+body {
+    margin: var(--web-margin);
+    font-family: 'Overpass Mono', monospace;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    background-color: var(--surface-primary);
+    color: var(--text-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    width: 100%; /* Take full width */
+    overflow: hidden; /* Prevent container from scrolling */
+}
+
+.sidebar {
+    width: 12em;
+    padding: 1em;
+    background-color: var(--surface-primary);
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar h2 {
+    margin: 0;
+    font-weight: 300;
+    font-size: var(--heading);
+    line-height: var(--heading-line-height);
+    color: var(--text-secondary);
+
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em; /* Space between buttons */
+    margin-bottom: 1em;
+}
+
+.sidebar button {
+    background-color: var(--surface-primary);
+    border: 1px solid var(--stroke-primary);
+    border-radius: 1000px;
+    padding: 1.25em 0.8em 1em 0.8em;
+    cursor: pointer;
+    line-height: 0;
+    font-family: 'Overpass Mono', monospace;
+    text-transform: uppercase;
+    font-size: var(--body-copy);
+    color: var(--text-primary);
+    display: inline-block;
+    width: auto;
+    white-space: nowrap;
+}
+
+.sidebar button:hover {
+    background-color: var(--text-primary);
+    color: var(--surface-primary);
+}
+
+.button-group button.active {
+    background-color: var(--text-primary);
+    color: var(--surface-primary);
+    border: 1px solid var(--text-primary);
+}
+
+/* Footer */ 
+
+#logo {
+    cursor: pointer;
+}
+
+.footer {
+    margin-bottom: 2em;
+}
+
+.sidebar .footer {
+    margin-top: auto;
+    font-size: var(--caption);
+}
+
+.footer-text {
+    color: var(--text-secondary);
+}
+
+/* Links */
+
+a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 1em;
+    padding-left: 2.5em;
+    margin-left: 12em;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* Header */ 
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1em;
+    color: var(--text-secondary);
+    top: 0; /* Sticks to the top of the page */
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: var(--body-copy);
+    font-weight: 300;
+}
+
+header p {
+    margin: 0;
+    font-size: var(--body-copy);
+}
+
+/* Cards */ 
+
+.hidden {
+    display: none;
+}
+
+.card {
+    background-color: var(--surface-secondary);
+}
+
+.img-container {
+    background-color: var(--surface-primary);
+    width: 100%;
+    overflow: hidden;
+
+}
+
+.card-img {
+    width: 100%; /* Image scales with the container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes the small gap below the image */
+    border: 1px solid var(--stroke-primary);
+    border-radius: 24px;
+    
+}
+    
+
+.typeface-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40vw, 1fr));
+    gap: 0em 1em;
+    padding-bottom: 1em;
+}
+
+.cards .card {
+    display: block;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+.cards .card.hidden {
+    display: none;
+}
+
+.caption {
+    font-size: var(--caption);
+    text-align: right;
+}
