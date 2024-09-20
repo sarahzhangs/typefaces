@@ -111,7 +111,6 @@ body {
 /* Links */
 
 a {
-    color: var(--text-primary);
     text-decoration: none;
 }
 
